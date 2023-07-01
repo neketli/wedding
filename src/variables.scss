@@ -1,0 +1,29 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+$main: #ddbea9;
+$main-accent: #cb997e;
+$main-light: #ffe8d6;
+
+$secondary: #a5a58d;
+$secondary-accent: #6b705c;
+$secondary-light: #b7b7a4;
+
+$white: #f8f9fa;
+$dark: #212529;
+
+$dark-description: #495057;
+$dark-hover: #343a40;
+
+$light-border: #dee2e6;
+$light-bg: #e9ecef;
+$light-hover: #ced4da;
+
+@mixin phone {
+	@media (max-width: 480px) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
