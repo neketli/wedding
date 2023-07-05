@@ -1,29 +1,46 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	const endpoint = 'https://jsonplaceholder.typicode.com/posts';
-	let posts: { title: string }[] = [{ title: '123' }];
 
 	onMount(async function () {});
 </script>
 
 <section class="hero">
-	<h1>Здравствуйте!</h1>
-	<h2>Приглашаем вас на свадьбу!</h2>
-	<p>Всем привет</p>
-	<img src="/src/assets/1.jpg" alt="это мы" srcset="" />
+	<h4 class="hero__target">Дорогие Папа и Мама</h4>
+	<h3 class="hero__invite">С радостью приглашаем вас на торжественное событие!</h3>
+	<h1 class="hero__title">Свадьба</h1>
+	<h2 class="hero__names">Никиты и Татьяны</h2>
+	<h2 class="hero__date">23 августа в 16:00</h2>
 </section>
 
 <style lang="scss">
 	.hero {
 		padding: 20px 30px;
 		margin: 0 auto;
+		font-size: 1.5rem;
+
 		text-align: center;
+		background-color: $main;
+
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		h1 {
-			font-size: 50px;
+
+		height: 760px;
+
+		@include tablet {
+			height: 100vh;
+		}
+
+		&__title,
+		&__names,
+		&__date {
+			font-family: 'Caveat', cursive;
+			line-height: 1;
+		}
+
+		&__names {
+			font-size: 4rem;
 		}
 	}
 </style>

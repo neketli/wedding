@@ -1,17 +1,14 @@
 // Fonts cdn
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:wght@400;700&display=swap');
 // Reset css
 @import 'reset.scss';
 
 html {
 	background-color: $light-bg;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	color: $dark;
 }
 
 h1,
-h2,
-h3,
-h4 {
-	font-family: 'Advent Pro', sans-serif;
+h2 {
 }
