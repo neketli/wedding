@@ -27,9 +27,7 @@
 	<div class="place__banquet">
 		<p>
 			А отметить это событие приглашаем Вас в Банкет Холл "Рокфор" в 17:00 по адресу:
-			<a
-				target="_blank"
-				href="https://yandex.ru/maps/org/otdel_zags_administratsii_proletarskogo_rayona_g_rostov_na_donu/1049234200"
+			<a target="_blank" href="https://yandex.ru/maps/org/rokfor/155739321934/"
 				><span>Ростов&#8209;на&#8209;Дону, ул. 40&#8209;я Линия, 5/64</span>
 			</a>
 		</p>
@@ -81,8 +79,13 @@
 			padding: 30px 0;
 		}
 
+		&__title {
+			z-index: 2;
+		}
+
 		&__registry,
 		&__banquet {
+			z-index: 2;
 			font-size: 1.2rem;
 			font-weight: bold;
 
@@ -97,7 +100,6 @@
 			align-items: center;
 
 			@include tablet {
-				height: 80vw;
 				font-size: 1rem;
 			}
 
@@ -142,6 +144,10 @@
 		&__flowers {
 			position: absolute;
 			width: 200px;
+
+			@include tablet {
+				width: 100px;
+			}
 
 			&--left {
 				left: 10px;
