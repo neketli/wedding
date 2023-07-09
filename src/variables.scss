@@ -1,9 +1,9 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
-$main: #ddbea9;
+$main: #ccd4c2b8;
 $main-accent: #cb997e;
 $main-light: #ffe8d6;
 
-$secondary: #a5a58d;
+$secondary: #e2e0c9;
 $secondary-accent: #6b705c;
 $secondary-light: #b7b7a4;
 
@@ -17,7 +17,7 @@ $light-border: #dee2e6;
 $light-bg: #e9ecef;
 $light-hover: #ced4da;
 
-@mixin phone {
+@mixin mobile {
 	@media (max-width: 480px) {
 		@content;
 	}
