@@ -6,10 +6,12 @@
 </script>
 
 <section class="confirm">
-	<h2 class="confirm__title">Просим вас подтвердить свое <br /> присутсвие не позднее 1 августа</h2>
+	<h2 class="confirm__title">
+		Просим вас подтвердить свое <br /> присутствие не позднее 1 августа
+	</h2>
 
 	<div class="confirm__actions">
-		<Button class="confirm__button" on:click={() => console.log(123)}>
+		<Button class="confirm__button" on:click={() => console.log('clicked')}>
 			Я приду
 
 			<img class="confirm__hearts" src="src/assets/images/hearts.png" alt="цветы" />
@@ -75,7 +77,7 @@
 			}
 
 			&--left {
-				bottom: 0;
+				bottom: -15px;
 				left: 0;
 				transform: rotate(0deg);
 			}
