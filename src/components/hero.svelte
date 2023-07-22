@@ -1,8 +1,3 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	onMount(async function () {});
-</script>
-
 <section class="hero">
 	<img
 		class="hero__image hero__image--left"
