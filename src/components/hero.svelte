@@ -16,6 +16,10 @@
 	/>
 	<h1 class="hero__title">Никита и Татьяна</h1>
 	<h2 class="hero__date">23 августа 2023</h2>
+	<div class="hero__rings">
+		<img class="hero__rings-image" src="/src/assets/images/rings.svg" alt="кольца" />
+		<div class="hero__rings-shadow" />
+	</div>
 	<img
 		class="hero__image hero__image--right"
 		src="/src/assets/images/hero-right.png"
@@ -37,8 +41,9 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		overflow: hidden;
 
-		height: 440px;
+		height: 540px;
 
 		&__title {
 			font-size: 3em;
@@ -54,6 +59,52 @@
 
 			@include mobile {
 				font-size: 1em;
+			}
+		}
+
+		&__rings {
+			position: absolute;
+			bottom: -80px;
+			width: 400px;
+
+			&-image {
+				animation: rings 5s ease-in-out infinite;
+				transform-origin: 50% 50%;
+				@keyframes rings {
+					0% {
+						transform: translateY(3%) rotate(0);
+					}
+					50% {
+						transform: translateY(-3%) rotate(5deg);
+					}
+					100% {
+						transform: translateY(3%) rotate(0);
+					}
+				}
+			}
+
+			&-shadow {
+				position: absolute;
+				left: 35%;
+				bottom: 30%;
+				width: 80px;
+				height: 3px;
+				border-radius: 50%;
+				background-color: rgba(125, 130, 118, 0.1);
+				box-shadow: 4px 4px 8px 8px rgba(125, 130, 118, 0.1);
+
+				animation: shadow 5s ease-in-out infinite;
+				@keyframes shadow {
+					0% {
+						transform: scale(1.5);
+					}
+					50% {
+						transform: scale(1);
+					}
+					100% {
+						transform: scale(1.5);
+					}
+				}
 			}
 		}
 
