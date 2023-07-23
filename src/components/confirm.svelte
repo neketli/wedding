@@ -93,6 +93,7 @@
 	};
 
 	let list: string[] = [];
+	$: if (!confirmModal) list = [];
 </script>
 
 <section class="confirm">

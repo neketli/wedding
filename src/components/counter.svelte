@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	let timer = [
@@ -65,10 +65,10 @@
 	onMount(() => {
 		updateTimer();
 		timerId = setInterval(updateTimer, 1000);
-	});
 
-	onDestroy(() => {
-		clearInterval(timerId);
+		return () => {
+			clearInterval(timerId);
+		};
 	});
 </script>
 
