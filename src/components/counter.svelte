@@ -163,6 +163,7 @@
 				}
 
 				&--left {
+					height: 7vw;
 					top: -2%;
 					left: -7%;
 					transform: rotate(-45deg);

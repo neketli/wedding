@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<button class={`button ${$$props.class}`} on:mouseenter on:click><slot /></button>
+<button {...$$restProps} class={`button ${$$props.class}`} on:mouseenter on:click><slot /></button>
 
 <style lang="scss">
 	.button {
