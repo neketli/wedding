@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Button from './Ui/Button.svelte';
+	import Modal from './Ui/Modal.svelte';
 
-	onMount(async function () {});
+	let showModal = false;
 </script>
 
 <section class="confirm">
@@ -11,7 +12,7 @@
 	</h2>
 
 	<div class="confirm__actions">
-		<Button class="confirm__button" on:click={() => console.log('clicked')}>
+		<Button class="confirm__button" on:click={() => (showModal = true)}>
 			Я приду
 
 			<img class="confirm__hearts" src="src/assets/images/hearts.png" alt="цветы" />
@@ -29,6 +30,12 @@
 		src="src/assets/images/confirm-flower.png"
 		alt="цветы"
 	/>
+
+	<Modal bind:showModal>
+		<h2 slot="header">Для нас важно знать</h2>
+
+		<div class="ds">123</div>
+	</Modal>
 </section>
 
 <style lang="scss">
@@ -57,6 +64,7 @@
 
 		&__title {
 			z-index: 2;
+			max-width: 70vw;
 		}
 
 		&__actions {

@@ -6,23 +6,17 @@
 		},
 		{
 			label: 'Зеленый',
-			color: '#c6dcdd'
+			color: '#B3CCAE'
 		},
 		{
 			label: 'Бежевый',
 			color: '#E1C9A9'
-		},
-		{
-			label: 'Белый',
-			color: '#f6fafb'
 		}
 	];
 </script>
 
 <section class="colors">
-	<h2 class="colors__title">
-		Будем признательны если вы поддержите цветовую гамму нашего события!
-	</h2>
+	<h2 class="colors__title">Нам будет приятно если вы поддержите цветовую гамму нашего события!</h2>
 
 	<div class="colors__list">
 		{#each colors as color}
@@ -71,6 +65,7 @@
 
 		&__title {
 			z-index: 2;
+			max-width: 60vw;
 		}
 		&__list {
 			margin-top: 40px;

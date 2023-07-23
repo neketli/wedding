@@ -16,6 +16,8 @@ $light-border: #dee2e6;
 $light-bg: #e9ecef;
 $light-hover: #ced4da;
 
+$blue: #4169e1;
+
 @mixin mobile {
 	@media (max-width: 480px) {
 		@content;

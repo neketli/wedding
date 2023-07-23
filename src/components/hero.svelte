@@ -10,7 +10,7 @@
 		alt="цветочки"
 	/>
 	<h1 class="hero__title">Никита и Татьяна</h1>
-	<h2 class="hero__date">23 августа 2023</h2>
+	<h2 class="hero__date" title="Да, это среда">23 августа 2023</h2>
 	<div class="hero__rings">
 		<img class="hero__rings-image" src="/src/assets/images/rings.svg" alt="кольца" />
 		<div class="hero__rings-shadow" />

@@ -29,7 +29,7 @@
 		}
 	];
 
-	const wedding = new Date(2023, 7, 23);
+	const wedding = new Date(2023, 7, 23, 16);
 
 	let timerId: NodeJS.Timer;
 
@@ -180,6 +180,9 @@
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 30px;
+			@include mobile {
+				gap: 15px;
+			}
 
 			&-item {
 				display: flex;
@@ -210,6 +213,10 @@
 				transform: translate(-3%, -5%);
 				padding: 40px;
 				min-width: 200px;
+				@include mobile {
+					min-width: 150px;
+					padding: 20px;
+				}
 				span {
 					font-size: 2em;
 					font-weight: 700;

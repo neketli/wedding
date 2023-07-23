@@ -19,6 +19,7 @@
 			<a
 				target="_blank"
 				href="https://yandex.ru/maps/org/otdel_zags_administratsii_proletarskogo_rayona_g_rostov_na_donu/1049234200"
+				title="Открыть карту"
 				>по адресу: <span>Ростов&#8209;на&#8209;Дону, 1&#8209;я Майская ул., 20</span>
 			</a>
 		</p>
@@ -26,8 +27,11 @@
 
 	<div class="place__banquet">
 		<p>
-			А отметить это событие приглашаем Вас в Банкет Холл "Рокфор" в 17:00 по адресу:
-			<a target="_blank" href="https://yandex.ru/maps/org/rokfor/155739321934/"
+			А отметить это событие приглашаем Вас в банкет холл "Рокфор" в 17:00 по адресу:
+			<a
+				target="_blank"
+				href="https://yandex.ru/maps/org/rokfor/155739321934/"
+				title="Открыть карту"
 				><span>Ростов&#8209;на&#8209;Дону, ул. 40&#8209;я Линия, 5/64</span>
 			</a>
 		</p>
@@ -115,7 +119,7 @@
 				text-decoration: none;
 				color: $dark;
 				span {
-					color: #4c5ee2;
+					color: $blue;
 				}
 			}
 		}
