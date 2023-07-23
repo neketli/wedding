@@ -70,7 +70,7 @@
 						transform: translateY(3%) rotate(0);
 					}
 					50% {
-						transform: translateY(-3%) rotate(5deg);
+						transform: translateY(-3%) rotate(2deg);
 					}
 					100% {
 						transform: translateY(3%) rotate(0);

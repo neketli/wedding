@@ -123,7 +123,7 @@
 		overflow: hidden;
 
 		text-align: center;
-		background-color: $secondary;
+		background-color: $main;
 
 		display: flex;
 		flex-direction: column;
@@ -145,6 +145,7 @@
 
 		&__photo {
 			position: relative;
+			max-width: 50%;
 
 			&__image {
 				width: auto;
@@ -162,7 +163,7 @@
 				}
 
 				&--left {
-					top: -5%;
+					top: -2%;
 					left: -7%;
 					transform: rotate(-45deg);
 				}

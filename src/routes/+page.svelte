@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Colors from '../components/colors.svelte';
 	import Confirm from '../components/confirm.svelte';
 	import Counter from '../components/counter.svelte';
 	import Hero from '../components/hero.svelte';
@@ -13,6 +14,7 @@
 	<Place />
 	<Confirm />
 	<Rules />
+	<Colors />
 	<Counter />
 </main>
 
