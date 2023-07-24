@@ -14,6 +14,7 @@
 	const target = decodeURI($page.url.hash).slice(1);
 	let guest: Guest = {
 		label: 'Дорогой гость!',
+		value: '',
 		confirmed: false
 	};
 	if (guests[target]) {
@@ -25,7 +26,7 @@
 	<Hero />
 	<Invite {guest} />
 	<Place />
-	<Confirm />
+	<Confirm {guest} />
 	<Rules />
 	<Colors />
 	<Counter />

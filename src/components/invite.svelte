@@ -1,24 +1,38 @@
 <script lang="ts">
+	import { inview, type Options } from 'svelte-inview';
+	import { fade, fly } from 'svelte/transition';
 	import type { Guest } from '../data/guests';
+
+	let isInView: boolean;
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
+		(isInView = detail.inView);
+
+	const observerOptions: Options = {
+		rootMargin: '50px',
+		unobserveOnEnter: true
+	};
 	export let guest: Guest;
 </script>
 
-<section class="invite">
-	<h2 class="invite__title">{guest?.label}</h2>
-	<div class="invite__text">
-		<p>
-			Мы рады сообщить Вам о том, что 23.08.23 состоится торжественный праздник, посвященный нашему
-			бракосочетанию.
+<section use:inview={observerOptions} on:inview_change={handleChange} class="invite">
+	{#if isInView}
+		<h2 transition:fade class="invite__title">{guest?.label}</h2>
+		<div transition:fade class="invite__text">
+			<p>
+				Мы рады сообщить Вам о том, что 23.08.23 состоится торжественный праздник, посвященный
+				нашему бракосочетанию.
 
-			<span>
-				Мы от всего сердца просим Вас провести этот незабываемый в нашей жизни день вместе с нами.
-			</span>
-		</p>
-	</div>
+				<span>
+					Мы от всего сердца просим Вас провести этот незабываемый в нашей жизни день вместе с нами.
+				</span>
+			</p>
+		</div>
+	{/if}
 </section>
 
 <style lang="scss">
 	.invite {
+		min-height: 500px;
 		padding: 30px;
 		margin: 0 auto;
 		font-size: 1.5rem;

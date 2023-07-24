@@ -7,6 +7,10 @@
 	import Radio from './Ui/Radio.svelte';
 	import Textarea from './Ui/Textarea.svelte';
 
+	import type { Guest } from '../data/guests';
+
+	export let guest: Guest;
+
 	type DefaultObject = {
 		label: string;
 		value: string;
@@ -15,7 +19,7 @@
 	let confirmModal = false;
 	let declineModal = false;
 
-	let name: string;
+	let name: string = guest.value;
 	let comment: string;
 
 	const options = {
@@ -146,11 +150,13 @@
 				<Textarea label="Что еще нам следует знать?" bind:value={comment} />
 				<div class="confirm__modal-buttons">
 					<Button
+						style="primary"
 						on:click={() => {
 							console.log(name, selected.alcohol?.value, list, selected.food?.value, comment);
 						}}>Подтверждаю</Button
 					>
 					<Button
+						style="danger"
 						on:click={() => {
 							confirmModal = false;
 						}}>Отмена</Button

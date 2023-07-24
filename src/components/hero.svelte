@@ -1,25 +1,44 @@
-<section class="hero">
-	<img
-		class="hero__image hero__image--left"
-		src="/src/assets/images/hero-left.png"
-		alt="цветочки"
-	/>
-	<img
-		class="hero__image hero__image--center"
-		src="/src/assets/images/wedding.png"
-		alt="цветочки"
-	/>
-	<h1 class="hero__title">Никита и Татьяна</h1>
-	<h2 class="hero__date" title="Да, это среда">23 августа 2023</h2>
-	<div class="hero__rings">
-		<img class="hero__rings-image" src="/src/assets/images/rings.svg" alt="кольца" />
-		<div class="hero__rings-shadow" />
-	</div>
-	<img
-		class="hero__image hero__image--right"
-		src="/src/assets/images/hero-right.png"
-		alt="цветочки"
-	/>
+<script lang="ts">
+	import { inview, type Options } from 'svelte-inview';
+	import { fade, fly } from 'svelte/transition';
+
+	let isInView: boolean;
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
+		(isInView = detail.inView);
+
+	const observerOptions: Options = {
+		rootMargin: '50px',
+		unobserveOnEnter: true
+	};
+</script>
+
+<section use:inview={observerOptions} on:inview_change={handleChange} class="hero">
+	{#if isInView}
+		<img
+			transition:fade={{ delay: 300 }}
+			class="hero__image hero__image--left"
+			src="/src/assets/images/hero-left.png"
+			alt="цветочки"
+		/>
+		<img
+			transition:fade={{}}
+			class="hero__image hero__image--center"
+			src="/src/assets/images/wedding.png"
+			alt="цветочки"
+		/>
+		<h1 transition:fade class="hero__title">Никита и Татьяна</h1>
+		<h2 transition:fade class="hero__date" title="Да, это среда">23 августа 2023</h2>
+		<div transition:fly={{ y: 50, opacity: 0 }} class="hero__rings">
+			<img class="hero__rings-image" src="/src/assets/images/rings.svg" alt="кольца" />
+			<div class="hero__rings-shadow" />
+		</div>
+		<img
+			transition:fade={{ delay: 600 }}
+			class="hero__image hero__image--right"
+			src="/src/assets/images/hero-right.png"
+			alt="цветочки"
+		/>
+	{/if}
 </section>
 
 <style lang="scss">

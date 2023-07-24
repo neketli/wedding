@@ -1,9 +1,3 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-
-	onMount(async function () {});
-</script>
-
 <section class="place">
 	<h2 class="place__title">Место проведения</h2>
 	<div class="place__registry">
