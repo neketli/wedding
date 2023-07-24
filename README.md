@@ -1,18 +1,8 @@
-# create-svelte
+# Wedding
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/189a0aae-4622-4085-8b7f-3f7af7bd7ebf/deploy-status)](https://app.netlify.com/sites/magenta-cassata-c89cd8/deploys)
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Сайт-приглашение на свадьбу
 
 ## Developing
 
