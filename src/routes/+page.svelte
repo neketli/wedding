@@ -20,6 +20,12 @@
 	if (guests[target]) {
 		guest = guests[target];
 	}
+
+	export async function load() {
+		return {
+			title: 'Приглашение на свадьбу Никиты и Татьяны'
+		};
+	}
 </script>
 
 <main class="page">
