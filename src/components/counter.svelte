@@ -86,15 +86,15 @@
 		</div>
 
 		<div class="counter__photo">
-			<img class="counter__photo-image" src="src/assets/images/counter-photo.png" alt="фото" />
+			<img class="counter__photo-image" src="/images/counter-photo.png" alt="фото" />
 			<img
 				class="counter__photo-tape counter__photo-tape--left"
-				src="src/assets/images/counter-tape1.png"
+				src="/images/counter-tape1.png"
 				alt="скотч"
 			/>
 			<img
 				class="counter__photo-tape counter__photo-tape--right"
-				src="src/assets/images/counter-tape2.png"
+				src="/images/counter-tape2.png"
 				alt="скотч"
 			/>
 		</div>
@@ -102,12 +102,12 @@
 
 	<img
 		class="counter__flowers counter__flowers--left"
-		src="src/assets/images/counter-left-flower.png"
+		src="/images/counter-left-flower.png"
 		alt="цветы"
 	/>
 	<img
 		class="counter__flowers counter__flowers--right"
-		src="src/assets/images/counter-right-flower.png"
+		src="/images/counter-right-flower.png"
 		alt="цветы"
 	/>
 </section>
@@ -189,7 +189,7 @@
 				display: flex;
 				flex-direction: column;
 
-				background-image: url('src/assets/images/counter-note.png');
+				background-image: url('/images/counter-note.png');
 				background-repeat: no-repeat;
 				background-size: auto 100%;
 				background-position: center;

@@ -27,14 +27,10 @@
 		{/each}
 	</div>
 
-	<img
-		class="colors__flowers colors__flowers--left"
-		src="src/assets/images/confirm-flower.png"
-		alt="цветы"
-	/>
+	<img class="colors__flowers colors__flowers--left" src="/images/confirm-flower.png" alt="цветы" />
 	<img
 		class="colors__flowers colors__flowers--right"
-		src="src/assets/images/confirm-flower.png"
+		src="/images/confirm-flower.png"
 		alt="цветы"
 	/>
 </section>

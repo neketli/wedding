@@ -166,19 +166,19 @@
 	<div class="confirm__actions">
 		<Button class="confirm__button" on:click={() => (confirmModal = true)}>
 			Я приду
-			<img class="confirm__hearts" src="src/assets/images/hearts.png" alt="цветы" />
+			<img class="confirm__hearts" src="/images/hearts.png" alt="цветы" />
 		</Button>
 		<Button on:click={() => (declineModal = true)}>Я не смогу</Button>
 	</div>
 
 	<img
 		class="confirm__flowers confirm__flowers--left"
-		src="src/assets/images/confirm-flower.png"
+		src="/images/confirm-flower.png"
 		alt="цветы"
 	/>
 	<img
 		class="confirm__flowers confirm__flowers--right"
-		src="src/assets/images/confirm-flower.png"
+		src="/images/confirm-flower.png"
 		alt="цветы"
 	/>
 	{#if confirmModal}

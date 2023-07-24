@@ -8,28 +8,20 @@
 	<h2 class="rules__title">Наши пожелания</h2>
 	<div class="rules__text">
 		<p>Будем признательны, если вы не будете кричать «горько» во время наших поцелуев</p>
-		<img class="rules__delimiter" src="src/assets/images/rules-delimiter.png" alt="-" />
+		<img class="rules__delimiter" src="/images/rules-delimiter.png" alt="-" />
 		<p>
 			Просим вас не дарить нам цветы - сразу после свадьбы мы уезжаем в свадебное путешествие, не
 			успеем насладится их красотой
 		</p>
-		<img class="rules__delimiter" src="src/assets/images/rules-delimiter.png" alt="-" />
+		<img class="rules__delimiter" src="/images/rules-delimiter.png" alt="-" />
 		<p>Свои тёплые слова и пожелания приносите в сердцах, а подарки - в конверте</p>
-		<img class="rules__logo" src="src/assets/images/rules-logo.png" alt="-" />
+		<img class="rules__logo" src="/images/rules-logo.png" alt="-" />
 	</div>
 
-	<img class="rules__letter" src="src/assets/images/rules-letter.png" alt="фон" />
+	<img class="rules__letter" src="/images/rules-letter.png" alt="фон" />
 
-	<img
-		class="rules__flowers rules__flowers--left"
-		src="src/assets/images/rules-flower.png"
-		alt="цветы"
-	/>
-	<img
-		class="rules__flowers rules__flowers--right"
-		src="src/assets/images/rules-flower-2.png"
-		alt="цветы"
-	/>
+	<img class="rules__flowers rules__flowers--left" src="/images/rules-flower.png" alt="цветы" />
+	<img class="rules__flowers rules__flowers--right" src="/images/rules-flower-2.png" alt="цветы" />
 </section>
 
 <style lang="scss">

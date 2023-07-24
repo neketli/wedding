@@ -55,7 +55,7 @@
 			font-weight: bold;
 
 			margin-top: 20px;
-			background-image: url('src/assets/images/invite-bg.png');
+			background-image: url('/images/invite-bg.png');
 			background-repeat: no-repeat;
 			background-size: auto 100%;
 			background-position: center;

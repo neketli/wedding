@@ -31,26 +31,26 @@
 		</p>
 	</div>
 
-	<img class="place__airplane" src="src/assets/images/message.png" alt="самолетик" />
+	<img class="place__airplane" src="/images/message.png" alt="самолетик" />
 
 	<img
 		class="place__flowers place__flowers--left place__flowers--top"
-		src="src/assets/images/place-flowers.png"
+		src="/images/place-flowers.png"
 		alt="цветы"
 	/>
 	<img
 		class="place__flowers place__flowers--left place__flowers--bottom"
-		src="src/assets/images/place-flowers.png"
+		src="/images/place-flowers.png"
 		alt="цветы"
 	/>
 	<img
 		class="place__flowers place__flowers--right place__flowers--top"
-		src="src/assets/images/place-flowers.png"
+		src="/images/place-flowers.png"
 		alt="цветы"
 	/>
 	<img
 		class="place__flowers place__flowers--right place__flowers--bottom"
-		src="src/assets/images/place-flowers.png"
+		src="/images/place-flowers.png"
 		alt="цветы"
 	/>
 </section>
@@ -119,7 +119,7 @@
 		}
 
 		&__registry {
-			background-image: url('src/assets/images/place.png');
+			background-image: url('/images/place.png');
 			height: 350px;
 		}
 
