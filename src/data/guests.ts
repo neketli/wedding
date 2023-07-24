@@ -138,3 +138,5 @@ export const guests: {
 		confirmed: false
 	}
 };
+
+export const totalGuests = Object.keys(guests).length;

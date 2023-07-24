@@ -20,7 +20,7 @@ export const sendConfirmNotification = async ({
 		Предпочтения по алкоголю 🍷: ${alcohol} ${alcoholList.join(' ')} %0A
 		Предпочтения по еде 🥑: ${food}%0A%0A
 
-		Комментарий 💬:%0A${comment}
+		Комментарий 💬:%0A${comment}%0A%0A
 	`;
 	await sendNotification(message);
 };
