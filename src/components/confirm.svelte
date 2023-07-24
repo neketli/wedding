@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { error } from '@sveltejs/kit';
+	import { toast } from '@zerodevx/svelte-toast';
 	import { slide } from 'svelte/transition';
 	import Button from './Ui/Button.svelte';
 	import Checkbox from './Ui/Checkbox.svelte';
@@ -8,6 +10,7 @@
 	import Textarea from './Ui/Textarea.svelte';
 
 	import type { Guest } from '../data/guests';
+	import { sendConfirmNotification, sendDeclineNotification } from '../service/telegram';
 
 	export let guest: Guest;
 
@@ -21,6 +24,8 @@
 
 	let name: string = guest.value;
 	let comment: string;
+
+	let isLoading = false;
 
 	const options = {
 		alcohol: [
@@ -98,6 +103,59 @@
 
 	let list: string[] = [];
 	$: if (!confirmModal) list = [];
+
+	const confirm = async () => {
+		isLoading = true;
+		try {
+			await sendConfirmNotification({
+				name,
+				alcohol: selected.alcohol?.value,
+				alcoholList: list,
+				food: selected.food?.value,
+				comment
+			});
+			toast.push('Успешно отправлено!', {
+				theme: {
+					'--toastBackground': 'rgba(72,187,120,0.9)',
+					'--toastBarBackground': '#2F855A'
+				}
+			});
+		} catch (error) {
+			toast.push('Возникла ошибка! :(', {
+				theme: {
+					'--toastBackground': 'rgba(114,47,55,0.8)',
+					'--toastBarBackground': '#722f37'
+				}
+			});
+		}
+		confirmModal = false;
+		isLoading = false;
+	};
+
+	const decline = async () => {
+		isLoading = true;
+		try {
+			await sendDeclineNotification({
+				name,
+				comment
+			});
+			toast.push('Успешно отправлено!', {
+				theme: {
+					'--toastBackground': 'rgba(72,187,120,0.9)',
+					'--toastBarBackground': '#2F855A'
+				}
+			});
+		} catch (error) {
+			toast.push('Возникла ошибка! :(', {
+				theme: {
+					'--toastBackground': 'rgba(114,47,55,0.8)',
+					'--toastBarBackground': '#722f37'
+				}
+			});
+		}
+		declineModal = false;
+		isLoading = false;
+	};
 </script>
 
 <section class="confirm">
@@ -149,12 +207,7 @@
 
 				<Textarea label="Что еще нам следует знать?" bind:value={comment} />
 				<div class="confirm__modal-buttons">
-					<Button
-						style="primary"
-						on:click={() => {
-							console.log(name, selected.alcohol?.value, list, selected.food?.value, comment);
-						}}>Подтверждаю</Button
-					>
+					<Button style="primary" on:click={confirm}>Подтверждаю</Button>
 					<Button
 						style="danger"
 						on:click={() => {
@@ -172,10 +225,10 @@
 			<div class="confirm__decline">
 				<Input autofocus label="Ваше имя" bind:value={name} />
 
-				<Textarea label="Можете написать нам" bind:value={comment} />
+				<Textarea label="Комментарий" bind:value={comment} />
 				<div class="confirm__decline-buttons">
-					<Button on:click={() => {}}>Я не смогу</Button>
-					<Button on:click={() => (declineModal = false)}>Отмена</Button>
+					<Button style="primary" on:click={decline}>Я не смогу</Button>
+					<Button style="danger" on:click={() => (declineModal = false)}>Отмена</Button>
 				</div>
 			</div>
 		</Modal>
