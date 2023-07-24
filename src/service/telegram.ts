@@ -2,10 +2,10 @@ import { PUBLIC_TG_KEY, PUBLIC_TG_CHAT } from '$env/static/public';
 
 export const sendConfirmNotification = async ({
 	name,
-	alcohol,
+	alcohol = '-',
 	alcoholList,
-	food,
-	comment
+	food = '-',
+	comment = '-'
 }: {
 	name: string;
 	alcohol?: string;
