@@ -23,7 +23,6 @@ jobs:
       - name: build
         env:
           BASE_PATH: '/wedding'
-        with:
           PUBLIC_TG_KEY: ${{ secrets.PUBLIC_TG_KEY }}
           PUBLIC_TG_CHAT: ${{ secrets.PUBLIC_TG_CHAT }}
         run: |
