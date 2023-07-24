@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	let title = 'Дорогие мама и папа!';
-	onMount(async function () {});
+	import type { Guest } from '../data/guests';
+	export let guest: Guest;
 </script>
 
 <section class="invite">
-	<h2 class="invite__title">{title}</h2>
+	<h2 class="invite__title">{guest?.label}</h2>
 	<div class="invite__text">
 		<p>
 			Мы рады сообщить Вам о том, что 23.08.23 состоится торжественный праздник, посвященный нашему
