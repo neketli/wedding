@@ -50,9 +50,9 @@
 	.input-label {
 		font-size: 1rem;
 		position: absolute;
+		top: 0;
 		left: 1rem;
 		pointer-events: none;
-		transform: translateY(0.5rem);
 		transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
 </style>
