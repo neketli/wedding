@@ -17,15 +17,13 @@
 	};
 	onMount(() => {
 		document.addEventListener('keydown', onEscapeClicked);
-		document.body.style.position = 'fixed';
-		document.body.style.top = `-${window.scrollY}px`;
+		document.body.style.maxHeight = '100vh';
+		document.body.style.overflow = 'hidden';
 
 		return () => {
 			document.removeEventListener('keydown', onEscapeClicked);
-			const scrollY = document.body.style.top;
-			document.body.style.position = '';
-			document.body.style.top = '';
-			window.scrollTo(0, parseInt(scrollY || '0') * -1);
+			document.body.style.maxHeight = 'none';
+			document.body.style.overflow = 'auto';
 		};
 	});
 </script>
