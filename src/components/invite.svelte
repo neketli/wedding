@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { inview, type Options } from 'svelte-inview';
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import type { Guest } from '../data/guests';
 
 	let isInView: boolean;

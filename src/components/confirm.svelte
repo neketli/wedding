@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { error } from '@sveltejs/kit';
 	import { toast } from '@zerodevx/svelte-toast';
 	import { slide } from 'svelte/transition';
 	import Button from './Ui/Button.svelte';
@@ -8,6 +7,9 @@
 	import Modal from './Ui/Modal.svelte';
 	import Radio from './Ui/Radio.svelte';
 	import Textarea from './Ui/Textarea.svelte';
+
+	import Flowers from '$lib/images/confirm-flower.png';
+	import Hearts from '$lib/images/hearts.png';
 
 	import type { Guest } from '../data/guests';
 	import { sendConfirmNotification, sendDeclineNotification } from '../service/telegram';
@@ -170,21 +172,13 @@
 	<div class="confirm__actions">
 		<Button class="confirm__button" on:click={() => (confirmModal = true)}>
 			Я приду
-			<img class="confirm__hearts" src="/images/hearts.png" alt="цветы" />
+			<img class="confirm__hearts" src={Hearts} alt="цветы" />
 		</Button>
 		<Button on:click={() => (declineModal = true)}>Я не смогу</Button>
 	</div>
 
-	<img
-		class="confirm__flowers confirm__flowers--left"
-		src="/images/confirm-flower.png"
-		alt="цветы"
-	/>
-	<img
-		class="confirm__flowers confirm__flowers--right"
-		src="/images/confirm-flower.png"
-		alt="цветы"
-	/>
+	<img class="confirm__flowers confirm__flowers--left" src={Flowers} alt="цветы" />
+	<img class="confirm__flowers confirm__flowers--right" src={Flowers} alt="цветы" />
 	{#if confirmModal}
 		<Modal bind:showModal={confirmModal}>
 			<h2 slot="header">Для нас важно знать</h2>

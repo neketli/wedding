@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { inview, type Options } from 'svelte-inview';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+
+	import Flowers from '$lib/images/confirm-flower.png';
 
 	let isInView: boolean;
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
@@ -44,12 +46,8 @@
 		{/each}
 	</div>
 
-	<img class="colors__flowers colors__flowers--left" src="/images/confirm-flower.png" alt="цветы" />
-	<img
-		class="colors__flowers colors__flowers--right"
-		src="/images/confirm-flower.png"
-		alt="цветы"
-	/>
+	<img class="colors__flowers colors__flowers--left" src={Flowers} alt="цветы" />
+	<img class="colors__flowers colors__flowers--right" src={Flowers} alt="цветы" />
 </section>
 
 <style lang="scss">

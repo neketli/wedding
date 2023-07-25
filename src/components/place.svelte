@@ -1,3 +1,8 @@
+<script lang="ts">
+	import FlowerAngle from '$lib/images/place-flowers.png';
+	import Airplane from '$lib/images/message.png';
+</script>
+
 <section class="place">
 	<h2 class="place__title">Место проведения</h2>
 	<div class="place__registry">
@@ -31,26 +36,26 @@
 		</p>
 	</div>
 
-	<img class="place__airplane" src="/images/message.png" alt="самолетик" />
+	<img class="place__airplane" src={Airplane} alt="самолетик" />
 
 	<img
 		class="place__flowers place__flowers--left place__flowers--top"
-		src="/images/place-flowers.png"
+		src={FlowerAngle}
 		alt="цветы"
 	/>
 	<img
 		class="place__flowers place__flowers--left place__flowers--bottom"
-		src="/images/place-flowers.png"
+		src={FlowerAngle}
 		alt="цветы"
 	/>
 	<img
 		class="place__flowers place__flowers--right place__flowers--top"
-		src="/images/place-flowers.png"
+		src={FlowerAngle}
 		alt="цветы"
 	/>
 	<img
 		class="place__flowers place__flowers--right place__flowers--bottom"
-		src="/images/place-flowers.png"
+		src={FlowerAngle}
 		alt="цветы"
 	/>
 </section>

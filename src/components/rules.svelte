@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { inview, type Options } from 'svelte-inview';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+
+	import Delimiter from '$lib/images/rules-delimiter.png';
+	import Logo from '$lib/images/rules-logo.png';
+	import Letter from '$lib/images/rules-letter.png';
+	import FlowersLeft from '$lib/images/rules-flower.png';
+	import FlowersRight from '$lib/images/rules-flower-2.png';
 
 	let isInView: boolean;
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
@@ -22,7 +28,7 @@
 			<img
 				transition:fly={{ y: 20, opacity: 0, delay: 300 }}
 				class="rules__delimiter"
-				src="/images/rules-delimiter.png"
+				src={Delimiter}
 				alt="-"
 			/>
 			<p transition:fly={{ y: 20, opacity: 0, delay: 500 }}>
@@ -32,7 +38,7 @@
 			<img
 				transition:fly={{ y: 20, opacity: 0, delay: 700 }}
 				class="rules__delimiter"
-				src="/images/rules-delimiter.png"
+				src={Delimiter}
 				alt="-"
 			/>
 			<p transition:fly={{ y: 20, opacity: 0, delay: 900 }}>
@@ -41,16 +47,16 @@
 			<img
 				transition:fly={{ y: 20, opacity: 0, delay: 1000 }}
 				class="rules__logo"
-				src="/images/rules-logo.png"
+				src={Logo}
 				alt="-"
 			/>
 		{/if}
 	</div>
 
-	<img class="rules__letter" src="/images/rules-letter.png" alt="фон" />
+	<img class="rules__letter" src={Letter} alt="фон" />
 
-	<img class="rules__flowers rules__flowers--left" src="/images/rules-flower.png" alt="цветы" />
-	<img class="rules__flowers rules__flowers--right" src="/images/rules-flower-2.png" alt="цветы" />
+	<img class="rules__flowers rules__flowers--left" src={FlowersLeft} alt="цветы" />
+	<img class="rules__flowers rules__flowers--right" src={FlowersRight} alt="цветы" />
 </section>
 
 <style lang="scss">

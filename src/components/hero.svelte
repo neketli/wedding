@@ -2,6 +2,11 @@
 	import { inview, type Options } from 'svelte-inview';
 	import { fade, fly } from 'svelte/transition';
 
+	import FlowerLeft from '$lib/images/hero-left.png';
+	import FlowerRight from '$lib/images/hero-right.png';
+	import Rings from '$lib/images/rings.svg';
+	import Wedding from '$lib/images/wedding.png';
+
 	let isInView: boolean;
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
 		(isInView = detail.inView);
@@ -17,25 +22,20 @@
 		<img
 			transition:fade={{ delay: 300 }}
 			class="hero__image hero__image--left"
-			src="/images/hero-left.png"
+			src={FlowerLeft}
 			alt="цветочки"
 		/>
-		<img
-			transition:fade={{}}
-			class="hero__image hero__image--center"
-			src="/images/wedding.png"
-			alt="цветочки"
-		/>
+		<img transition:fade class="hero__image hero__image--center" src={Wedding} alt="цветочки" />
 		<h1 transition:fade class="hero__title">Никита и Татьяна</h1>
 		<h2 transition:fade class="hero__date" title="Да, это среда">23 августа 2023</h2>
 		<div transition:fly={{ y: 50, opacity: 0 }} class="hero__rings">
-			<img class="hero__rings-image" src="/images/rings.svg" alt="кольца" />
+			<img class="hero__rings-image" src={Rings} alt="кольца" />
 			<div class="hero__rings-shadow" />
 		</div>
 		<img
 			transition:fade={{ delay: 600 }}
 			class="hero__image hero__image--right"
-			src="/images/hero-right.png"
+			src={FlowerRight}
 			alt="цветочки"
 		/>
 	{/if}

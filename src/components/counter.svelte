@@ -2,6 +2,12 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
+	import FlowerLeft from '$lib/images/counter-left-flower.png';
+	import FlowerRight from '$lib/images/counter-right-flower.png';
+	import Photo from '$lib/images/counter-photo.png';
+	import Tape1 from '$lib/images/counter-tape1.png';
+	import Tape2 from '$lib/images/counter-tape2.png';
+
 	let timer = [
 		{
 			label: 'Дней',
@@ -86,30 +92,14 @@
 		</div>
 
 		<div class="counter__photo">
-			<img class="counter__photo-image" src="/images/counter-photo.png" alt="фото" />
-			<img
-				class="counter__photo-tape counter__photo-tape--left"
-				src="/images/counter-tape1.png"
-				alt="скотч"
-			/>
-			<img
-				class="counter__photo-tape counter__photo-tape--right"
-				src="/images/counter-tape2.png"
-				alt="скотч"
-			/>
+			<img class="counter__photo-image" src={Photo} alt="фото" />
+			<img class="counter__photo-tape counter__photo-tape--left" src={Tape1} alt="скотч" />
+			<img class="counter__photo-tape counter__photo-tape--right" src={Tape2} alt="скотч" />
 		</div>
 	</div>
 
-	<img
-		class="counter__flowers counter__flowers--left"
-		src="/images/counter-left-flower.png"
-		alt="цветы"
-	/>
-	<img
-		class="counter__flowers counter__flowers--right"
-		src="/images/counter-right-flower.png"
-		alt="цветы"
-	/>
+	<img class="counter__flowers counter__flowers--left" src={FlowerLeft} alt="цветы" />
+	<img class="counter__flowers counter__flowers--right" src={FlowerRight} alt="цветы" />
 </section>
 
 <style lang="scss">
