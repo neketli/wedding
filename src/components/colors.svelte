@@ -32,10 +32,10 @@
 	];
 </script>
 
-<section use:inview={observerOptions} on:inview_change={handleChange} class="colors">
+<section class="colors">
 	<h2 class="colors__title">Нам будет приятно если вы поддержите цветовую гамму нашего события!</h2>
 
-	<div class="colors__list">
+	<div use:inview={observerOptions} on:inview_change={handleChange} class="colors__list">
 		{#each colors as color}
 			{#if isInView}
 				<div transition:fly={{ opacity: 0, y: -50, delay: color.delay }} class="colors__color">
