@@ -41,7 +41,7 @@
 
 		&:focus ~ &-label,
 		&:valid ~ &-label {
-			transform: translateY(-100%) scale(1.2);
+			transform: translateY(-150%) scale(1.2);
 			padding: 0 0.2em;
 			color: $blue;
 		}
@@ -50,7 +50,7 @@
 	.input-label {
 		font-size: 1rem;
 		position: absolute;
-		top: 0;
+		top: 20%;
 		left: 1rem;
 		pointer-events: none;
 		transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
