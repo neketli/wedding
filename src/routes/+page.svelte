@@ -20,13 +20,11 @@
 	if (guests[target]) {
 		guest = guests[target];
 	}
-
-	export async function load() {
-		return {
-			title: 'Приглашение на свадьбу Никиты и Татьяны'
-		};
-	}
 </script>
+
+<svelte:head>
+	<title>Приглашение на свадьбу Никиты и Татьяны</title>
+</svelte:head>
 
 <main class="page">
 	<Hero />
