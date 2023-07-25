@@ -33,8 +33,8 @@
 		touch-action: manipulation;
 		transform-style: preserve-3d;
 
-		@media (min-width: 768px) {
-			padding: 0 40px;
+		@include tablet {
+			padding: 0 20px;
 		}
 
 		&--default {

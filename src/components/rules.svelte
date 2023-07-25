@@ -1,21 +1,50 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { inview, type Options } from 'svelte-inview';
+	import { fade, fly } from 'svelte/transition';
 
-	onMount(async function () {});
+	let isInView: boolean;
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
+		(isInView = detail.inView);
+
+	const observerOptions: Options = {
+		rootMargin: '50px',
+		unobserveOnEnter: true
+	};
 </script>
 
 <section class="rules">
 	<h2 class="rules__title">Наши пожелания</h2>
-	<div class="rules__text">
-		<p>Будем признательны, если вы не будете кричать «горько» во время наших поцелуев</p>
-		<img class="rules__delimiter" src="/images/rules-delimiter.png" alt="-" />
-		<p>
-			Просим вас не дарить нам цветы - сразу после свадьбы мы уезжаем в свадебное путешествие, не
-			успеем насладится их красотой
-		</p>
-		<img class="rules__delimiter" src="/images/rules-delimiter.png" alt="-" />
-		<p>Свои тёплые слова и пожелания приносите в сердцах, а подарки - в конверте</p>
-		<img class="rules__logo" src="/images/rules-logo.png" alt="-" />
+	<div use:inview={observerOptions} on:inview_change={handleChange} class="rules__text">
+		{#if isInView}
+			<p transition:fly={{ y: 20, opacity: 0, delay: 100 }}>
+				Будем признательны, если вы не будете кричать «горько» во время наших поцелуев
+			</p>
+			<img
+				transition:fly={{ y: 20, opacity: 0, delay: 300 }}
+				class="rules__delimiter"
+				src="/images/rules-delimiter.png"
+				alt="-"
+			/>
+			<p transition:fly={{ y: 20, opacity: 0, delay: 500 }}>
+				Просим вас не дарить нам цветы - сразу после свадьбы мы уезжаем в свадебное путешествие, не
+				успеем насладится их красотой
+			</p>
+			<img
+				transition:fly={{ y: 20, opacity: 0, delay: 700 }}
+				class="rules__delimiter"
+				src="/images/rules-delimiter.png"
+				alt="-"
+			/>
+			<p transition:fly={{ y: 20, opacity: 0, delay: 900 }}>
+				Свои тёплые слова и пожелания приносите в сердцах, а подарки - в конверте
+			</p>
+			<img
+				transition:fly={{ y: 20, opacity: 0, delay: 1000 }}
+				class="rules__logo"
+				src="/images/rules-logo.png"
+				alt="-"
+			/>
+		{/if}
 	</div>
 
 	<img class="rules__letter" src="/images/rules-letter.png" alt="фон" />

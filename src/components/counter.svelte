@@ -132,6 +132,10 @@
 
 		position: relative;
 
+		@include tablet {
+			font-size: 1.2rem;
+		}
+
 		&__wrapper {
 			display: flex;
 			gap: 20px;

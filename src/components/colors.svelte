@@ -1,29 +1,46 @@
-<script>
+<script lang="ts">
+	import { inview, type Options } from 'svelte-inview';
+	import { fade, fly } from 'svelte/transition';
+
+	let isInView: boolean;
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) =>
+		(isInView = detail.inView);
+
+	const observerOptions: Options = {
+		rootMargin: '50px',
+		unobserveOnEnter: true
+	};
+
 	const colors = [
 		{
 			label: 'Черный',
-			color: '#252b31'
+			color: '#252b31',
+			delay: 200
 		},
 		{
 			label: 'Зеленый',
-			color: '#B3CCAE'
+			color: '#B3CCAE',
+			delay: 600
 		},
 		{
 			label: 'Бежевый',
-			color: '#E1C9A9'
+			color: '#E1C9A9',
+			delay: 400
 		}
 	];
 </script>
 
-<section class="colors">
+<section use:inview={observerOptions} on:inview_change={handleChange} class="colors">
 	<h2 class="colors__title">Нам будет приятно если вы поддержите цветовую гамму нашего события!</h2>
 
 	<div class="colors__list">
 		{#each colors as color}
-			<div class="colors__color">
-				<div class="colors__circle" style="background-color: {color.color}" />
-				{color.label}
-			</div>
+			{#if isInView}
+				<div transition:fly={{ opacity: 0, y: -50, delay: color.delay }} class="colors__color">
+					<div class="colors__circle" style="background-color: {color.color}" />
+					{color.label}
+				</div>
+			{/if}
 		{/each}
 	</div>
 

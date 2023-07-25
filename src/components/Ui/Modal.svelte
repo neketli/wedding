@@ -17,8 +17,16 @@
 	};
 	onMount(() => {
 		document.addEventListener('keydown', onEscapeClicked);
+		document.body.style.position = 'fixed';
+		document.body.style.top = `-${window.scrollY}px`;
 
-		return () => document.removeEventListener('keydown', onEscapeClicked);
+		return () => {
+			document.removeEventListener('keydown', onEscapeClicked);
+			const scrollY = document.body.style.top;
+			document.body.style.position = '';
+			document.body.style.top = '';
+			window.scrollTo(0, parseInt(scrollY || '0') * -1);
+		};
 	});
 </script>
 
@@ -51,6 +59,18 @@
 
 <style lang="scss">
 	.modal {
+		border-radius: 0.2em;
+		border: none;
+		padding: 20px 25px;
+
+		@include tablet {
+			padding: 1em;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			max-width: none;
+			max-height: none;
+		}
 		&__close {
 			display: flex;
 			position: absolute;
@@ -71,17 +91,10 @@
 			}
 		}
 	}
-	dialog {
-		border-radius: 0.2em;
-		border: none;
-		padding: 20px 25px;
-	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);
 	}
-	dialog > div {
-		padding: 1em;
-	}
+
 	dialog[open] {
 		animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 	}
