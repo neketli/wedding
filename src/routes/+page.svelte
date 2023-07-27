@@ -30,9 +30,7 @@
 	<Hero />
 	<Invite {guest} />
 	<Place />
-	{#if guest.value}
-		<Confirm {guest} />
-	{/if}
+	<Confirm {guest} />
 	<Rules />
 	<Colors />
 	<Counter />
